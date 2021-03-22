@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.kno85.tecnicaltest"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        buildConfigField "String", "API_CLIENT_ID", project.API_CLIENT_ID
+        buildConfigField "String", "PRIVATE_API_CLIENT_ID", project.PRIVATE_API_CLIENT_ID
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation androidLibs.values()
+    implementation kotlinLibs.values()
+    implementation libs.values()
+    implementation di.values()
+    implementation dexter.values()
+
+    kapt di2.values()
+
+    kapt androidKaptLibs.values()
+
+    testImplementation testLibs.values()
+    androidTestImplementation androidTestLibs.values()
+}

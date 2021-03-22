@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CharactersApp</string>
+    <string name="check_updates">CHECK UPDATES FOR THIS PROFILE</string>
+    <string name="conection_error">Error de conexión</string>
+    <string name="items_no_changes">Sin cambios</string>
+    <string name="items_has_changed">El item ha cambiado</string>
+    <string name="title_item_detail">Item Detail</string>
+</resources>
